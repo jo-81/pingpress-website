@@ -3,8 +3,10 @@
 namespace App\Controller\Admin;
 
 use App\Controller\Admin\ClubCrudController;
+use App\Entity\Club;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
@@ -26,9 +28,20 @@ class DashboardController extends AbstractDashboardController
             ->setTitle('Pingpress Website');
     }
 
+    public function configureCrud(): Crud
+    {
+        return Crud::new()
+            ->setPaginatorPageSize(15)
+        ;
+    }
+
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToDashboard('Club', 'fa fa-home');
-        // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
+        return [
+            MenuItem::linkToUrl('Retour vers le site', 'fa fa-reply-all', '/'),
+            
+            MenuItem::section('User'),
+            MenuItem::linkToCrud('Clubs', 'fa-solid fa-shield-halved', Club::class),
+        ];
     }
 }
