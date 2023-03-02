@@ -1,0 +1,14 @@
+App\Entity\Club:
+  club_1:
+    username: club81
+    password: \$2y\$10\$QinOFnvtok3hRngKyUJg1.hcYWbCvuNjAbB/BOyHuhppl/3U37N52
+    email: club81@gmail.com
+    website: https://geoffroy-colpart.fr/,
+    name: gtt-81
+
+  club_{2..100}:
+    username (unique): <username()>
+    password: \$2y\$10\$QinOFnvtok3hRngKyUJg1.hcYWbCvuNjAbB/BOyHuhppl/3U37N52
+    email (unique): <email()>
+    name (unique): <word()> 
+    website: <url()>

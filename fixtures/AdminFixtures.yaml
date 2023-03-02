@@ -1,0 +1,5 @@
+App\Entity\Admin:
+  admin:
+    username: admin81
+    password: \$2y\$10\$QinOFnvtok3hRngKyUJg1.hcYWbCvuNjAbB/BOyHuhppl/3U37N52
+    email: admin81@gmail.com
