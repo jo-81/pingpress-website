@@ -2,8 +2,8 @@
 
 namespace App\Controller\Admin;
 
-use App\Controller\Admin\ClubCrudController;
 use App\Entity\Club;
+use App\Controller\Admin\ClubCrudController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
@@ -39,7 +39,7 @@ class DashboardController extends AbstractDashboardController
     {
         return [
             MenuItem::linkToUrl('Retour vers le site', 'fa fa-reply-all', '/'),
-            
+
             MenuItem::section('User'),
             MenuItem::linkToCrud('Clubs', 'fa-solid fa-shield-halved', Club::class),
         ];
